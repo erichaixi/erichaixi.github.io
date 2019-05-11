@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="billsplitter.css" rel="stylesheet" type="text/css" />
+
+	<title>Bill Splitter</title>
+</head>
+<body>
+	<div class="description">
+		<h1>Bill Splitter</h1>
+		<p>A JavaScript script for calculating the cost of a meal split between a given number of people.</p>
+	</div>
+
+	<div class="grid-container">
+		<div class="total">Total $: </div>
+		<input type="number" id="total-amount" class="total-amount" oninput="update_all()"></input>
+
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+
+
+		<div class="tip">Tip:</div>
+		<div id="tip-amt" class="tip-amt">$0.00</div>
+
+
+
+		<div class="slidecontainer">
+			<input type="range" min="0" max="30" value="15" class="slider" id="myRange" oninput="update_tip(this.value)">
+		</div>
+		<div id="tip-pct" class="tip-pct">15%</div>
+
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+		<div class="blank"></div>
+
+
+		<div class="grand-total">Grand Total:</div>
+		<div id="grand-total-amt" class="grand-total-amt">$0.00</div>
+
+
+	</div>
+
+	
+
+	<script src="billsplitter.js"></script>
+</body>
+</html>

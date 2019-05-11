@@ -1,0 +1,65 @@
+﻿h1 {
+	line-height: 0px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: .25in .25in .25in .25in .25in .25in .25in .25in .25in .25in .25in .25in;
+	grid-template-rows: .4in .2in .4in .4in .2in .4in;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.grid-container > div, .grid-container > input {
+	background-color: rgba(255, 255, 255, 0.5);
+	/*border: 1px solid rgba(0, 0, 0, 0.3);*/
+	font-size: 30px;
+	text-align: right;
+}
+
+.total {
+	grid-column: 1 / 8;
+}
+
+.total-amount {
+	grid-column: 8 / 13;
+	vertical-align: middle;
+}
+
+.tip {
+	grid-row: 3/4;
+	grid-column: 1 / 8;
+}
+
+.tip-amt {
+	grid-column: 8 / 13;
+}
+
+.slidecontainer {
+	grid-column: 1 / 10;
+}
+
+.tip-pct {
+	grid-column: 10 / 13;
+}
+
+.slider {
+	width: 90%;
+	align-content: center;
+	vertical-align: middle;
+}
+
+.grand-total {
+	grid-column: 1 / 8;
+}
+
+.grand-total-amt {
+	grid-column: 8 / 13;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

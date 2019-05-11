@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Eric Xi</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+		/* Remove the navbar's default margin-bottom and rounded borders */
+		.navbar {
+			margin-bottom: 0;
+			border-radius: 0;
+		}
+
+		/* Add a gray background color and some padding to the footer */
+		footer {
+			background-color: #f2f2f2;
+			padding: 25px;
+		}
+
+		.banner {
+			position: relative;
+			text-align: center;
+			color: black;
+		}
+
+		.banner-text {
+			position: absolute; /* Position the background text */
+			bottom: 40%; /* At the bottom. Use top:0 to append it to the top */
+			background: rgb(0, 0, 0); /* Fallback color */
+			background: rgba(0, 0, 0, 0.4); /* Black background with 0.5 opacity */
+			width: 100%; /* Full width */
+			padding: 10px; /* Some padding */
+			resize: 200%;
+		}
+
+		.banner-image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			overflow: hidden;
+			opacity: 0.5;
+		}
+
+		.grid-container {
+			display: grid;
+			/*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
+			grid-template-columns: 33vw 33vw 33vw;
+			/*grid-auto-rows: 200px 200px 200px;*/
+			grid-template-rows: 28vh 28vh 28vh;
+			background-color: rgba(255, 255, 255, 0.8);
+			/*padding: 5px;*/
+			position: absolute;
+			top: 1px;
+			left: 1px;
+		}
+
+		.grid-item {
+			background-color: rgba(255, 255, 255, 0.5);
+			border: 1px solid rgba(0, 0, 0, 0.8);
+			padding: 50px;
+			font-size: 30px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+	<!--Navigation Bar-->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../index.html">Portfolio</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="../index.html">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Gallery</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!--Main Banner-->
+	<div class="banner">
+		<img class="banner-image" src="background.jpg" title="Picture by: Kenrick Mills" />
+		<!--Weather display grid-->
+		<div class="grid-container">
+			<div class="grid-item">1</div>
+			<div class="grid-item">2</div>
+			<div class="grid-item">3</div>
+			<div class="grid-item">4</div>
+			<div class="grid-item">5</div>
+			<div class="grid-item">6</div>
+			<div class="grid-item">7</div>
+			<div class="grid-item">8</div>
+			<div class="grid-item">9</div>
+		</div>
+	</div>
+
+	
+
+
+
+	<script src="weather.js"></script>
+
+	<footer class="container-fluid text-center">
+		<p>Footer Text</p>
+	</footer>
+
+</body>
+</html>
