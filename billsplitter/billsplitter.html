@@ -7,6 +7,10 @@
 	<link href="billsplitter.css" rel="stylesheet" type="text/css" />
 
 	<title>Bill Splitter</title>
+
+	
+
+
 </head>
 <body>
 	<div class="description">
@@ -14,55 +18,51 @@
 		<p>A JavaScript script for calculating the cost of a meal split between a given number of people.</p>
 	</div>
 
+	<br />
+
 	<div class="grid-container">
-		<div class="total">Total $: </div>
+
+		<div class="total label">Total $: </div>
 		<input type="number" id="total-amount" class="total-amount" oninput="update_all()"></input>
 
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
 
 
-		<div class="tip">Tip:</div>
+		<div class="blank-row"></div>
+
+		<div class="tip label">Tip:</div>
 		<div id="tip-amt" class="tip-amt">$0.00</div>
 
 
 
-		<div class="slidecontainer">
-			<input type="range" min="0" max="30" value="15" class="slider" id="myRange" oninput="update_tip(this.value)">
+		<div class="tip_slidecontainer">
+			<input type="range" min="0" max="30" value="15" class="tip_slider" id="myRange" oninput="update_tip(this.value)">
 		</div>
 		<div id="tip-pct" class="tip-pct">15%</div>
 
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
-		<div class="blank"></div>
+		<div class="blank-row"></div>
 
-
-		<div class="grand-total">Grand Total:</div>
+		<div class="grand-total label">Grand Total:</div>
 		<div id="grand-total-amt" class="grand-total-amt">$0.00</div>
+
+		<div class="blank-row"></div>
+
+		<div class="num_people label"># of People:</div>
+		<div id="num_people_count" class="num_people_count">1</div>
+		<img src="man-raising-hand.png" class="man_icon" alt="Man raising hand"/>
+
+		<div class="people_slidecontainer">
+			<input type="range" min="1" max="20" value="1" class="people_slider" id="myRange2" oninput="update_people(this.value)">
+		</div>
+
+		<div class="blank-row"></div>
+
+		<div class="dollar_per_person label">Cost/Person:</div>
+		<div id="split_cost" class="split_cost">$0.00</div>
 
 
 	</div>
 
-	
+
 
 	<script src="billsplitter.js"></script>
 </body>
