@@ -50,4 +50,8 @@ function update_all() {
 	let num_people = parseInt(document.getElementById("num_people_count").innerHTML);
 	let cost_per_person = (parseFloat(grand_total) / num_people).toFixed(2);
 	document.getElementById("split_cost").innerHTML = "$" + cost_per_person;
+
+	// $ per couple
+	let cost_per_couple = (2 * parseFloat(cost_per_person)).toFixed(2);
+	document.getElementById("couple_cost").innerHTML = "$" + cost_per_couple;
 }
