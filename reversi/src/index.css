@@ -1,0 +1,59 @@
+body {
+    font: 14px "Century Gothic", Futura, sans-serif;
+    margin: 20px;
+    background-image: url("./wood_background.jpg");
+}
+
+.Title {
+    font-size: 9vmin;
+    /*position: relative;*/
+    line-height: 0px;
+    margin-top: 1vmin;
+    /*margin-left: 20vmin;*/
+    text-align: center;
+    width: 81vmin;
+}
+
+.board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.square {
+    background: rgba(150, 150, 255, .5);
+    border: 1px solid black;
+    float: left;
+    font-size: 8vmin;
+    font-weight: bold;
+    /*line-height: 34px;*/
+    /*margin-right: -1px;*/
+    /*margin-top: -1px;*/
+    padding: 0;
+    text-align: center;
+    height: 9vmin;
+    width: 9vmin;
+}
+
+    .square:focus {
+        outline: none;
+    }
+
+.kbd-navigation .square:focus {
+    background: #ddd;
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.game-info {
+    width: 18 vmin;
+    font-size: 5vmin;
+    font-weight: bold;
+    margin-left: 20px;
+    /*padding-left: 30px;*/
+}
