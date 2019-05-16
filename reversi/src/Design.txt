@@ -1,0 +1,81 @@
+Class Game:
+    States:
+        squares = 8x8 game board
+            null = empty square
+            "B" = black piece
+            "W" = white piece
+        turn = which player's turn it is
+            "B" or "W"
+        numBlack = # of black pieces on the board
+        numWhite = # of white pieces on the board
+        numRemainining = # of pieces remaining to be played
+    Functions:
+        handleClick(i):
+            Details explained at the very bottom of doc
+        render():
+
+
+
+Class Board:
+    Props:
+        onClick = handleClick method from Game class
+        lastPlay = index of square of last piece played
+    Functions:
+        renderSquare(i):
+            i = index of this square, 0-63
+            Calls the Square function with props:
+                value = value of this square - null, "B", or "W"
+                onClick = handleClick function from Game class
+                isLast = boolean of whether this square was the lastPlayed square
+        render():
+            returns <div> of all 64 squares
+
+Global Functions:
+    Square(props):
+        Props:
+            value = value of this square - null, "B", or "W"
+            onClick = handleClick method from Game class
+            isLast = true if this was the lastPlayed square
+
+        Return:
+            Button with className depending on value of that square,
+            className also contains highlighted if isLast
+
+    ScoreCount(props):
+        Props:
+            turn
+            numBlack
+            numWhite
+        Return:
+            Div containing score displays for black and white players
+            
+    RemainingCount(props):
+        Props:
+            numRemaining
+        Return:
+            Div containing # piece remaining display
+
+
+
+handleClick Function:
+    Description:
+        Determines whether placing a piece at this square is a valid move:
+            Check if at least 1 piece is captured in any of 8 directions:
+                Up
+                Down
+                Left
+                Right
+                Up-left
+                Up-right
+                Down-left
+                Down-right
+            How to check:
+                1) Make sure the 1st piece in this direction is the opposite color
+                2) Continue down this direction until you reach the same color piece or edge of board
+                    - If reached same color piece
+                        - All pieces in between have their Colors switched
+                            - Add/subtract from corresponding numBlack / numWhite
+                    - Else, reached border, do nothing
+        If at least 1 piece was captured, move is valid so do:
+            - alternateTurn() = next player's turn
+            - numRemaining -= 1
