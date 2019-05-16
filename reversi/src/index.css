@@ -1,9 +1,8 @@
 body {
-    font: 14px "Helvetica", Futura, sans-serif;
-    background-image: url("./wood_background.jpg");
+    background-image: url(./wood_background.jpg);
     background-size: cover;
+    font: 14px 'Helvetica', Futura, sans-serif;
 }
-
 
 /*Game Board*/
 .game {
@@ -13,17 +12,16 @@ body {
 
 .Title {
     font-size: 9vmin;
-    /*line-height: 0px;*/
+    height: 9vmin;
+    margin: 0;
+    padding: 0;
     text-align: center;
     width: 80vmin;
-    height: 9vmin;
-    margin: 0px;
-    padding: 0px;
 }
 
 .board-row:after {
     clear: both;
-    content: "";
+    content: '';
     display: table;
 }
 
@@ -31,63 +29,63 @@ body {
     background: rgba(103, 246, 122, .8);
     border: .2vmin solid black;
     float: left;
-    font-size: 8vmin;
-    font-weight: bold;
+    height: 10vmin;
+    outline: none;
     padding: 0;
     text-align: center;
-    height: 10vmin;
     width: 10vmin;
 }
+
 .square-highlighted {
     background-color: rgba(255, 50, 50, .8);
     border: .2vmin solid black;
     float: left;
-    font-size: 8vmin;
-    font-weight: bold;
+    height: 10vmin;
+    outline: none;
     padding: 0;
     text-align: center;
-    height: 10vmin;
     width: 10vmin;
 }
+
 .black-square:before {
-    position: relative;
-    content: '';
-    width: 8.6vmin;
-    height: 8.6vmin;
-    border-radius: 50%;
     background-color: black;
-    display: flex;
-    margin: 0 auto;
-}
-.white-square:before {
-    position: relative;
-    content: '';
-    width: 8vmin;
-    height: 8vmin;
     border-radius: 50%;
-    background-color: white;
-    border: .3vmin solid black;
+    content: '';
     display: flex;
-    margin: 0 auto;
+    height: 8.6vmin;
+    margin: auto;
+    position: relative;
+    width: 8.6vmin;
 }
 
+.white-square:before {
+    background-color: white;
+    border: .3vmin solid black;
+    border-radius: 50%;
+    content: '';
+    display: flex;
+    height: 8vmin;
+    margin: auto;
+    position: relative;
+    width: 8vmin;
+}
 
 /*Game Info display on right side*/
 .game-info {
-    width: 19.6vmin;
+    background: rgba(200, 200, 200, .8);
     border: .2vmin solid black;
     height: 79.6vmin;
-    background: rgba(200, 200, 200, .8);
     margin-left: 1vmin;
+    width: 19.6vmin;
 }
 
 .score-title {
-    text-align: center;
-    line-height: 0px;
-    margin-top: 3vmin;
-    margin-bottom: 4vmin;
     font-size: 5vmin;
     font-weight: bold;
+    line-height: 0;
+    margin-top: 3vmin;
+    margin-bottom: 4vmin;
+    text-align: center;
 }
 
 .score-display {
@@ -97,110 +95,106 @@ body {
     margin-left: -.2vmin;
     margin-bottom: -.3vmin;
 }
+
 .score-display-highlighted {
+    background-color: rgba(255, 50, 50, .8);
     border: .2vmin solid black;
-    width: 19.6vmin;
     height: 20vmin;
-    margin-left: -.2vmin;
     margin-bottom: -.3vmin;
-    background-color: rgba(255, 50, 50, .8);
+    margin-left: -.2vmin;
+    width: 19.6vmin;
 }
-/*.highlighted {
-    background-color: rgba(255, 50, 50, .8);
-}*/
 
 .black-piece-display {
-    position: relative;
-    content: '';
-    width: 8vmin;
-    height: 8vmin;
-    border-radius: 50%;
     background-color: black;
-    margin: 0 auto;
+    border-radius: 50%;
+    content: '';
+    height: 8vmin;
+    margin: auto;
+    position: relative;
     top: 2vmin;
+    width: 8vmin;
 }
+
 .black-counter {
+    font-size: 6vmin;
     position: relative;
     text-align: center;
     top: 3vmin;
-    font-size: 6vmin;
 }
 
 .white-piece-display {
-    position: relative;
-    content: '';
-    width: 8vmin;
-    height: 8vmin;
-    border-radius: 50%;
     background-color: white;
     border: .3vmin solid black;
-    margin: 0 auto;
+    border-radius: 50%;
+    content: '';
+    height: 8vmin;
+    margin: auto;
+    position: relative;
     top: 2vmin;
+    width: 8vmin;
 }
+
 .white-counter {
+    font-size: 6vmin;
     position: relative;
     text-align: center;
     top: 3vmin;
-    font-size: 6vmin;
 }
 
-
 .display-divider {
-    width: 19.6vmin;
-    height: 4vmin;
     background-color: black;
+    height: 4vmin;
+    width: 19.6vmin;
 }
 
 .remaining-title {
-    text-align: center;
-    margin-top: 1vmin;
-    margin-bottom: 0vmin;
     font-size: 3.5vmin;
     font-weight: bold;
-    width: 19.6vmin;
     height: 9vmin;
+    margin-bottom: 0;
+    margin-top: 1vmin;
+    text-align: center;
+    width: 19.6vmin;
 }
+
 .remaining-display {
     border: .2vmin solid black;
-    width: 19.6vmin;
     height: 18.2vmin;
     margin-left: -.2vmin;
+    width: 19.6vmin;
 }
+
 .remaining-black-piece {
-    position: relative;
-    content: '';
-    width: 8.6vmin;
-    height: 8.6vmin;
-    border-radius: 50%;
     background-color: black;
+    border-radius: 50%;
+    content: '';
+    height: 8.6vmin;
     left: 4vmin;
+    position: relative;
     top: 2vmin;
+    width: 8.6vmin;
     z-index: 1;
 }
+
 .remaining-white-piece {
-    position: relative;
-    content: '';
-    width: 8vmin;
-    height: 8vmin;
-    border-radius: 50%;
     background-color: white;
     border: .3vmin solid black;
-    /*margin: 0 auto;*/
-    top: -6.6vmin;
+    border-radius: 50%;
+    content: '';
+    height: 8vmin;
     left: 7vmin;
-}
-.remaining-counter {
     position: relative;
-    text-align: center;
+    top: -6.6vmin;
+    width: 8vmin;
+}
+
+.remaining-counter {
     bottom: 6vmin;
     font-size: 6vmin;
+    position: relative;
+    text-align: center;
 }
-
-
-/*.square:focus {
-    background: rgba(255, 57, 57, .8);
-}*/
-
 
 
 
