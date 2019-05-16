@@ -1,17 +1,21 @@
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
+    font: 14px "Helvetica", Futura, sans-serif;
     background-image: url("./wood_background.jpg");
+    background-size: cover;
+}
+
+
+/*Game Board*/
+.game {
+    display: flex;
+    flex-direction: row;
 }
 
 .Title {
     font-size: 9vmin;
-    /*position: relative;*/
     line-height: 0px;
-    margin-top: 1vmin;
-    /*margin-left: 20vmin;*/
     text-align: center;
-    width: 81vmin;
+    width: 80vmin;
 }
 
 .board-row:after {
@@ -21,39 +25,160 @@ body {
 }
 
 .square {
-    background: rgba(150, 150, 255, .5);
-    border: 1px solid black;
+    background: rgba(103, 246, 122, .8);
+    border: .2vmin solid black;
     float: left;
     font-size: 8vmin;
     font-weight: bold;
-    /*line-height: 34px;*/
-    /*margin-right: -1px;*/
-    /*margin-top: -1px;*/
     padding: 0;
     text-align: center;
-    height: 9vmin;
-    width: 9vmin;
+    height: 10vmin;
+    width: 10vmin;
 }
-
-    .square:focus {
-        outline: none;
-    }
-
-.kbd-navigation .square:focus {
-    background: #ddd;
-}
-
-.game {
+.black-square:before {
+    position: relative;
+    content: '';
+    width: 8.6vmin;
+    height: 8.6vmin;
+    border-radius: 50%;
+    background-color: black;
     display: flex;
-    flex-direction: row;
+    margin: 0 auto;
+}
+.white-square:before {
+    position: relative;
+    content: '';
+    width: 8vmin;
+    height: 8vmin;
+    border-radius: 50%;
+    background-color: white;
+    border: .3vmin solid black;
+    display: flex;
+    margin: 0 auto;
 }
 
 
-
+/*Game Info display on right side*/
 .game-info {
-    width: 18 vmin;
+    width: 19.6vmin;
+    border: .2vmin solid black;
+    height: 80vmin;
+    background: rgba(200, 200, 200, .8);
+    margin-left: 1vmin;
+}
+
+.score-title {
+    text-align: center;
+    line-height: 0px;
+    margin-top: 3vmin;
+    margin-bottom: 4vmin;
     font-size: 5vmin;
     font-weight: bold;
-    margin-left: 20px;
-    /*padding-left: 30px;*/
 }
+
+.score-display {
+    border: .2vmin solid black;
+    width: 19.6vmin;
+    height: 20vmin;
+    margin-left: -.2vmin;
+    margin-bottom: -.3vmin;
+}
+.score-display-highlighted {
+    border: .2vmin solid black;
+    width: 19.6vmin;
+    height: 20vmin;
+    margin-left: -.2vmin;
+    margin-bottom: -.3vmin;
+    background-color: rgba(255, 50, 50, .8);
+}
+
+.black-piece-display {
+    position: relative;
+    content: '';
+    width: 8vmin;
+    height: 8vmin;
+    border-radius: 50%;
+    background-color: black;
+    margin: 0 auto;
+    top: 2vmin;
+}
+.black-counter {
+    position: relative;
+    text-align: center;
+    top: 3vmin;
+    font-size: 6vmin;
+}
+
+.white-piece-display {
+    position: relative;
+    content: '';
+    width: 8vmin;
+    height: 8vmin;
+    border-radius: 50%;
+    background-color: white;
+    border: .3vmin solid black;
+    margin: 0 auto;
+    top: 2vmin;
+}
+.white-counter {
+    position: relative;
+    text-align: center;
+    top: 3vmin;
+    font-size: 6vmin;
+}
+
+.remaining-title {
+    text-align: center;
+    margin-top: 5vmin;
+    margin-bottom: 0vmin;
+    font-size: 3.5vmin;
+    font-weight: bold;
+    width: 19.6vmin;
+    height: 9vmin;
+}
+.remaining-display {
+    border: .2vmin solid black;
+    width: 19.6vmin;
+    height: 18.7vmin;
+    margin-left: -.2vmin;
+}
+.remaining-black-piece {
+    position: relative;
+    content: '';
+    width: 8.6vmin;
+    height: 8.6vmin;
+    border-radius: 50%;
+    background-color: black;
+    left: 4vmin;
+    top: 2vmin;
+    z-index: 1;
+}
+.remaining-white-piece {
+    position: relative;
+    content: '';
+    width: 8vmin;
+    height: 8vmin;
+    border-radius: 50%;
+    background-color: white;
+    border: .3vmin solid black;
+    /*margin: 0 auto;*/
+    top: -6.6vmin;
+    left: 7vmin;
+}
+.remaining-counter {
+    position: relative;
+    text-align: center;
+    bottom: 6vmin;
+    font-size: 6vmin;
+}
+
+
+.square:focus {
+    background: rgba(255, 57, 57, .8);
+}
+
+
+
+
+
+
