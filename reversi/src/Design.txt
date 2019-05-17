@@ -9,9 +9,13 @@ Class Game:
         numBlack = # of black pieces on the board
         numWhite = # of white pieces on the board
         numRemainining = # of pieces remaining to be played
+        lastPlay = coordinates of square of last piece played, e.g., [3,3]
     Functions:
-        handleClick(i):
+        handleClick(row, col):
             Details explained at the very bottom of doc
+        getCapturedPieces(row, col)
+        processCapturedPieces(pieces)
+        alternateTurn()
         render():
 
 
@@ -21,8 +25,8 @@ Class Board:
         onClick = handleClick method from Game class
         lastPlay = index of square of last piece played
     Functions:
-        renderSquare(i):
-            i = index of this square, 0-63
+        renderSquare(row, col):
+            row, col = 0-7
             Calls the Square function with props:
                 value = value of this square - null, "B", or "W"
                 onClick = handleClick function from Game class
@@ -57,25 +61,32 @@ Global Functions:
 
 
 
-handleClick Function:
-    Description:
-        Determines whether placing a piece at this square is a valid move:
-            Check if at least 1 piece is captured in any of 8 directions:
-                Up
-                Down
-                Left
-                Right
-                Up-left
-                Up-right
-                Down-left
-                Down-right
-            How to check:
-                1) Make sure the 1st piece in this direction is the opposite color
-                2) Continue down this direction until you reach the same color piece or edge of board
-                    - If reached same color piece
-                        - All pieces in between have their Colors switched
-                            - Add/subtract from corresponding numBlack / numWhite
-                    - Else, reached border, do nothing
-        If at least 1 piece was captured, move is valid so do:
+Function handleClick(row, col):
+    Function getCapturedPieces(row, col):
+        each of the following functions returns an array of coordinates of captured pieces:
+            getCapturedUp(row, col)
+            getCapturedDown(row, col)
+            getCapturedLeft(row, col)
+            getCapturedRight(row, col)
+            getCapturedUpLeft(row, col)
+            getCapturedUpRight(row, col)
+            getCapturedDownLeft(row, col)
+            getCapturedDownRight(row, col)
+        The above arrays of coordinates are merged into a single array
+        If the merged array has no elements:
+            - then this is an invalid move
+        Else:
+            - Add/subtract the number of captured pieces to/from the Score Displays
             - alternateTurn() = next player's turn
             - numRemaining -= 1
+
+    How to check for captured[Direction]:
+        1) Make sure the 1st piece in this direction is the opposite color
+        2) Add index of each piece of opposite color to a return array
+        2) Continue down this direction until you reach the same color piece or edge of board
+            - If reached same color piece:
+                - Return the array of indexes
+            - Else, reached border:
+                - Return empty array
+
+            

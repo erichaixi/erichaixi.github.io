@@ -86,11 +86,13 @@ class ScoreDisplay extends React.Component {
     render() {
         return (
             <div className="game-info">
-                <div class="score-title">Scores</div>
+                <div className="score-title">Scores</div>
                 {this.BlackScoreDisplay()}
                 {this.WhiteScoreDisplay()}
-                <div class="display-divider"></div>
-                <div class="remaining-title">Remaining Pieces</div>
+
+                <div className="display-divider"></div>
+
+                <div className="remaining-title">Remaining Pieces</div>
                 <div className="remaining-display">
                     <div className="remaining-black-piece"></div>
                     <div className="remaining-white-piece"></div>
@@ -102,15 +104,15 @@ class ScoreDisplay extends React.Component {
 }
 
 class Board extends React.Component {
-    renderSquare(idx) {
+    renderSquare(row, col) {
         let isLastPlay = false;
-        if (idx == this.props.lastPlay) {
+        if ([row, col] == this.props.lastPlay) {
             isLastPlay = true;
         }
         return (
             <Square
-                value={this.props.squares[idx]}
-                onClick={() => this.props.onClick(idx)}
+                value={this.props.squares[row][col]}
+                onClick={() => this.props.onClick(row, col)}
                 isLastPlay={isLastPlay}
             />
         );
@@ -119,27 +121,18 @@ class Board extends React.Component {
     render() {
         let rows = [];
 
-        for (let i = 0; i < 8; i++) {
+        for (let row = 0; row < 8; row++) {
             let row_items = [];
-            for (let j = 0; j < 8; j++) {
-                row_items.push(<span>{this.renderSquare(i * 8 + j)}</span>)
+            for (let col = 0; col < 8; col++) {
+                row_items.push(<span>{this.renderSquare(row, col)}</span>)
             }
             rows.push(<div className="board-row">{row_items}</div>)
         }
-
  
         return (
-            <div>
-                <div className="game">
-      
-                    <div className="game-board">
-                        {rows}
-                    </div>
-              
-                        
-                </div>
-
-            </div>
+            <div className="game-board">
+                {rows}
+            </div>                 
         );
         
         
@@ -149,8 +142,14 @@ class Board extends React.Component {
 class Game extends React.Component {
     constructor(props) {
         super(props);
+
+        let temp_square = [];
+        for (let i = 0; i < 8; i++) {
+            temp_square.push(Array(8).fill(null));
+        }
+
         this.state = {
-            squares: Array(64).fill(null),
+            squares: temp_square,
             turn: "B",
             numBlack: 2,
             numWhite: 2,
@@ -158,39 +157,111 @@ class Game extends React.Component {
             lastPlay: -1
         };
 
-        this.state.squares[27] = "W";
-        this.state.squares[28] = "B";
-        this.state.squares[35] = "B";
-        this.state.squares[36] = "W";
+        this.state.squares[3][3] = "W";
+        this.state.squares[3][4] = "B";
+        this.state.squares[4][3] = "B";
+        this.state.squares[4][4] = "W";
     }
 
-    handleClick(idx) {
+    handleClick(row, col) {
         let isValidMove = false;
-        if (this.state.squares[idx] == null) {
-            const squares = this.state.squares.slice();
-            squares[idx] = this.state.turn;
 
-            if (this.state.turn == "B") {
-                const numBlack = this.state.numBlack + 1;
-                this.setState({ numBlack: numBlack })
-            }
-            else {
-                const numWhite = this.state.numWhite + 1;
-                this.setState({ numWhite: numWhite })
-            }
+        if (this.state.squares[row][col] == null) {
+            //let capturedPieces = this.getCapturedPieces(row, col);
 
-            const numRemaining = this.state.numRemaining - 1;
-            this.setState({ numRemaining: numRemaining })
-
-            this.setState({ squares: squares });
-
+            //if (capturedPieces.length > 0) {
+            //    this.processCapturedPieces(capturedPieces);
+            //    isValidMove = true;
+            //}     
             isValidMove = true;
+            this.state.squares[row][col] = this.state.turn;
         }
 
         if (isValidMove) {
             this.alternateTurn();
-            this.setState({ lastPlay: idx });
+            this.setState({ lastPlay: [row, col] });
+            const numRemaining = this.state.numRemaining - 1;
+            this.setState({ numRemaining: numRemaining })
         }
+    }
+
+    getCapturedPieces(row, col) {
+        //Checks if playing this move would capture any pieces
+        //Returns an array containing the square index of all captured pieces,
+        //or an empty array if no pieces were captured, which means an invalid move
+        let capturedPieces = [];
+
+        capturedPieces.concat(this.getCapturedUp(row, col));
+
+
+        return capturedPieces;
+    }
+
+    getCapturedUp(row, col) {
+        //Only a play at the 3rd row or lower(e.g., 4th, 5th) can capture pieces in Up direction
+        //if (row < 2) { 
+        //    return [];
+        //}
+
+        ////First piece in this direction must be the opposite color
+        //if (!this.isOppositeColor(this.state.squares[row - 1][col])) {
+        //    return [];
+        //}
+
+        //let capturedPieces = [[row -1, col]];
+        //let currIdx = row;
+        //while (currIdx >= 0) {
+        //    if (this.isSameColor(currIdx)) {
+        //        return capturedPieces;
+        //    }
+        //    else if (this.isOppositeColor(currIdx)) {
+        //        capturedPieces.push(currIdx);
+        //    }
+        //    else {
+        //        return [];
+        //    }
+        //    currIdx -= 8;
+        //}
+
+        return [];
+    }
+
+    isOppositeColor(idx) {
+        if (this.state.turn == "B") {
+            return (this.state.squares[idx] == "W");
+        }
+        else if (this.state.turn == "W") {
+            return (this.state.squares[idx] == "B");
+        }
+    }
+
+    isSameColor(idx) {
+        return (this.state.squares[idx] == this.state.turn);
+    }
+
+    processCapturedPieces(capturedPieces) {
+        //Changes the color of captured pieces
+        //Adjusts the Score counters to reflect this
+        const squares = this.state.squares.slice();
+
+        let idxCaptured;
+        let newNumBlack = this.state.numBlack;
+        let newNumWhite = this.state.numWhite;
+        for (idxCaptured in capturedPieces) {
+            squares[idxCaptured] = this.state.turn;
+            if (this.state.turn == "B") {
+                newNumBlack++;
+                newNumWhite--;
+            }
+            else if (this.state.turn == "W") {
+                newNumBlack--;
+                newNumWhite++;
+            }
+        }
+        
+        this.setState({ numBlack: newNumBlack });
+        this.setState({ numWhite: newNumWhite });
+        this.setState({ squares: squares });
     }
 
     alternateTurn() {
@@ -210,7 +281,7 @@ class Game extends React.Component {
                     <Board
                         squares={this.state.squares}
                         lastPlay={this.state.lastPlay}
-                        onClick={idx => this.handleClick(idx)}
+                        onClick={(row, col) => this.handleClick(row, col)}
                     />
                     <ScoreDisplay
                         turn={this.state.turn}
