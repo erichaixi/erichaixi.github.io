@@ -47,12 +47,43 @@
     transition: .5s;
     width: 32%;
 }
-    .project-box:hover {
-        background: rgba(240, 240, 240, .9);
-        margin: 0%;
-        height: 47vh;
-        width: 33%;
+
+.project-box:hover {
+    background: rgba(240, 240, 240, .9);
+    margin: 0%;
+    height: 47vh;
+    width: 33%;
+}
+
+@media screen and (max-width: 1300px) {
+    .project-box {
+        width: 48%;
     }
+
+    .project-box:hover {
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .project-box {
+        width: 98%;
+    }
+
+    .project-box:hover {
+        width: 100%;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .project-box {
+        height: 80%;
+    }
+
+    .project-box:hover {
+        height: 82%;
+    }
+}
 
 .project-box > h2 {
     grid-column: 1/4;

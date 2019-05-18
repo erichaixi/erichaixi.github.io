@@ -1,0 +1,16 @@
+﻿body
+{
+    background-image: url(images/wood_background.jpg);
+    background-size: cover;
+}
+
+/*Navigation Bar*/
+.navbar {
+    border-radius: 0;
+}
+
+.profile-pic {
+    height: 30vmin;
+    width: 30vmin;
+    max-height: 10px;
+}
