@@ -35,12 +35,12 @@
 
 .project-box {
     background: rgba(200, 200, 200, .7);
-    border: .4vh solid black;
+    border: 6px solid black;
     border-radius: .5em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    height: 45vh;
+    height: 440px;
     margin: .5%;
     overflow: hidden;
     padding: .6%;
@@ -51,7 +51,7 @@
 .project-box:hover {
     background: rgba(240, 240, 240, .9);
     margin: 0%;
-    height: 47vh;
+    height: 460px;
     width: 33%;
 }
 
@@ -65,23 +65,23 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
+    .project-box {
+        height: 500px;
+    }
+
+    .project-box:hover {
+        height: 530px;
+    }
+}
+
+@media screen and (max-width: 700px) {
     .project-box {
         width: 98%;
     }
 
     .project-box:hover {
         width: 100%;
-    }
-}
-
-@media screen and (max-height: 600px) {
-    .project-box {
-        height: 80%;
-    }
-
-    .project-box:hover {
-        height: 82%;
     }
 }
 
@@ -121,6 +121,7 @@
     font-size: 150%;
     font-weight: bold;
     font-style: italic;
+    /*padding: 5%;*/
 }
 
 .project-link {
