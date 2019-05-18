@@ -1,5 +1,10 @@
 ﻿body
 {
-    background-image: url(wood_background.jpg);
+    background-image: url(images/wood_background.jpg);
     background-size: cover;
+}
+
+/*Navigation Bar*/
+.navbar {
+    border-radius: 0;
 }
