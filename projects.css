@@ -81,7 +81,7 @@
 
 @media screen and (max-width: 700px) {
     .outer-box {
-        width: 100vw;
+        width: calc(100vw - 20px);
     }
 }
 
@@ -106,7 +106,7 @@
 .project-title {
     grid-column: 1/5;
     grid-row: 1/2;
-    font-size: 350%;
+    font-size: 5    vmin;
     font-weight: bold;
     /*font-size-adjust: .1;*/
     margin: 0;
@@ -135,13 +135,13 @@
     /* background-color: red; */
     grid-column: 1/5;
     grid-row: 7/10;
-    font-size: 150%;
+    font-size: 2.5vmin;
 }
 
 .keywords {
     grid-column: 1/5;
     grid-row: 10/11;
-    font-size: 150%;
+    font-size: 3vmin;
     font-weight: bold;
     font-style: italic;
     margin: auto;
