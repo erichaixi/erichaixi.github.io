@@ -2,6 +2,8 @@
 {
     background-image: url(images/fabrizio-conti-1444081-unsplash-reduced.jpg);
     background-size: cover;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /*Navigation Bar*/
