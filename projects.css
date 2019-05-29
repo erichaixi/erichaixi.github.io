@@ -37,53 +37,7 @@
     width: 35vw;
 }
 
-@media screen and (max-width: 1700px) {
-    .outer-box {
-        width: 40vw;
-    }
-}
 
-@media screen and (max-width: 1550px) {
-    .outer-box {
-        width: 45vw;
-    }
-}
-
-@media screen and (max-width: 1400px) {
-    .outer-box {
-        width: 50vw;
-    }
-}
-
-@media screen and (max-width: 1250px) {
-    .outer-box {
-        width: 60vw;
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    .outer-box {
-        width: 70vw;
-    }
-}
-
-@media screen and (max-width: 950px) {
-    .outer-box {
-        width: 80vw;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .outer-box {
-        width: 90vw;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .outer-box {
-        width: calc(100vw - 20px);
-    }
-}
 
 
 
@@ -134,14 +88,15 @@
 .summary {
     /* background-color: red; */
     grid-column: 1/5;
-    grid-row: 7/10;
-    font-size: 2.5vmin;
+    grid-row: 7/11;
+    font-size: 3vmin;
 }
 
+
 .keywords {
-    grid-column: 1/5;
-    grid-row: 10/11;
-    font-size: 3vmin;
+    /* grid-column: 1/5; */
+    /* grid-row: 10/11; */
+    /* font-size: 3vmin; */
     font-weight: bold;
     font-style: italic;
     margin: auto;
@@ -154,9 +109,69 @@
 }
 
 
+@media screen and (max-width: 1700px) {
+    .outer-box {
+        width: 40vw;
+    }
+}
 
+@media screen and (max-width: 1550px) {
+    .outer-box {
+        width: 45vw;
+    }
+}
 
+@media screen and (max-width: 1400px) {
+    .outer-box {
+        width: 50vw;
+    }
+}
 
+@media screen and (max-width: 1250px) {
+    .outer-box {
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .outer-box {
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .outer-box {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .outer-box {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .outer-box {
+        width: calc(100vw - 20px);
+    }
+
+    .summary {
+        font-size: 2.5vmin;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .summary {
+        font-size: 3vmin;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .summary {
+        font-size: 4vmin;
+    }
+}
     
 
 
