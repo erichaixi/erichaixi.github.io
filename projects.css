@@ -60,9 +60,8 @@
 .project-title {
     grid-column: 1/5;
     grid-row: 1/2;
-    font-size: 5    vmin;
+    font-size: 5vmin;
     font-weight: bold;
-    /*font-size-adjust: .1;*/
     margin: 0;
     /*background-color: red;*/
     text-align: center;
@@ -79,7 +78,7 @@
     /* background-color: red; */
     /* border: 5px solid black; */
     grid-column: 1/ 5;
-    grid-row: 2 / 7;
+    grid-row: 2 / 6;
     margin: auto;
     max-width: 90%;
     max-height: 90%;
@@ -87,16 +86,15 @@
 
 .summary {
     /* background-color: red; */
+    font-size: 2vmin;
     grid-column: 1/5;
-    grid-row: 7/11;
-    font-size: 3vmin;
+    grid-row: 6/10;
 }
 
-
 .keywords {
-    /* grid-column: 1/5; */
-    /* grid-row: 10/11; */
-    /* font-size: 3vmin; */
+    grid-column: 1/5;
+    grid-row: 10/11;
+    font-size: 3vmin;
     font-weight: bold;
     font-style: italic;
     margin: auto;
@@ -168,7 +166,7 @@
 }
 
 @media screen and (max-width: 380px) {
-    .summary {
+    .summary, ul {
         font-size: 4vmin;
     }
 }
