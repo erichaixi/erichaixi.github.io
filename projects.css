@@ -1,6 +1,7 @@
 ﻿body
 {
-    background-image: url(images/fabrizio-conti-1444081-unsplash-reduced.jpg);
+    /* background-image: url(images/fabrizio-conti-1444081-unsplash-reduced.jpg); */
+    background-image: url(images/blue_square_pattern.jpg);
     background-size: cover;
     overflow: hidden;
 }
@@ -16,6 +17,7 @@
 
 
 .nonmenu-container {
+    background-color: rgba(200, 200, 255, .2);
     height: 95vh;
     margin: 0;
     padding: 0;
@@ -24,7 +26,7 @@
 }
 
 .outer-box {
-    background: rgba(200, 200, 200, .4);
+    background: rgba(200, 200, 200, .3);
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -34,7 +36,7 @@
 }
 
 .inner-box {
-    background: rgba(200, 200, 200, .5);
+    background: rgba(255, 255, 255, .3);
     border: 2px solid grey;
     display: flex;
     flex-direction: column;
