@@ -1,0 +1,136 @@
+﻿body
+{
+    /* background-image: url(images/fabrizio-conti-1444081-unsplash-reduced.jpg); */
+    background-image: url(images/blue_square_pattern.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+/*Navigation Bar*/
+.navbar, navbar-inverse, navbar-brand {
+    border-radius: 0;
+    margin: 0;
+}
+
+
+
+
+
+.non-menu-container {
+    background-color: rgba(200, 200, 255, .2);
+    height: 95vh;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.outer-box {
+    background: rgba(200, 200, 200, .3);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    width: 35vw;
+}
+
+.inner-box {
+    background: rgba(255, 255, 255, .3);
+    border: 2px solid grey;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+}
+
+.inner-box:link, .inner-box:visited, .inner-box:hover, .inner-box:active {
+    color: black;
+    text-decoration: none;
+}
+
+.project-title {
+    /* background-color: blue; */
+    font-size: 5vh;
+    font-weight: bold;
+    margin: 2vh;
+    text-align: center;
+}
+
+.project-img {
+    /* border: 5px solid black; */
+    margin: auto;
+    max-height: 35vh;
+    max-width: 90%;
+}
+
+.summary {
+    /* background-color: red; */
+    font-size: 2vh;
+    grid-column: 1/5;
+    grid-row: 6/11;
+    height: 100%;
+    margin-top: 3vh;
+    width: 100%;
+}
+
+.keywords {
+    font-size: 2vh;
+    font-style: italic;
+    font-weight: bold;
+    padding: 2vh;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 1700px) {
+    .outer-box {
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    .outer-box {
+        width: 45vw;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .outer-box {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .outer-box {
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .outer-box {
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .outer-box {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .outer-box {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .outer-box {
+        width: calc(100vw - 20px);
+    }
+}
+
+
