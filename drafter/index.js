@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 function processData(allText) {
     // var record_num = 5;  // or however many elements there are in each row
-    var allTextLines = allText.split('#\r\n');
+    var allTextLines = allText.split('#');
 	// var entries = allTextLines[0].split(',');
 	var lines = [];
 	
