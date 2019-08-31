@@ -1,3 +1,4 @@
+
 .outer-container {
     margin: auto;
     text-align: center;
@@ -8,6 +9,7 @@ table {
     height: 500px;
     overflow-x: hidden;
     overflow-y: scroll;
+    --webkit-overflow-scrolling: touch;
 
     border-collapse: collapse;
     /* margin: auto; */
