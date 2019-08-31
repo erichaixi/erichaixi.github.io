@@ -1,0 +1,41 @@
+.outer-container {
+    margin: auto;
+    text-align: center;
+}
+
+table {
+    display: block;
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    border-collapse: collapse;
+    /* margin: auto; */
+    margin-left: 350px; 
+}
+
+.tr {
+    padding: 0 calc(100vw - 250px);
+    margin: auto;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px 0;
+}
+th {
+    background-color: rgba(0,0,200, .2);
+}
+
+.th1 {
+    width: 50px;
+}
+
+.th3 {
+    width: 300px;
+}
+
+tr.disabled {
+    background-color: grey;
+    color: white;
+}
