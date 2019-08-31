@@ -45,6 +45,7 @@ function processData(allText) {
 		
 		let row = allTextLines[i].split(',');
 		lines.push(row);
+		console.log(row);
 	}
 	
 	update_table(lines);
